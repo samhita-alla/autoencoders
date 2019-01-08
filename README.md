@@ -82,7 +82,7 @@ It's composed of two, symmetrical **Deep Belief Networks** that have four or fiv
 
 The layers are **Restricted Boltzmann machines**, the building blocks of deep-belief networks.
 
-<p align="center"><img src="./images/12_auto_encoders.png" width="500" height="400"/></p>
+<p align="center"><img src="./images/12_auto_encoders.png" width="400" height="400"/></p>
 
 
 

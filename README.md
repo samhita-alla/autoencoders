@@ -62,13 +62,13 @@ When the size of the hidden layer remains constant throughout, it might lead to 
 
 It is an autoencoder which has more number of hidden layer units than the input layer but additionally, implements Regularization technique(prevents overfitting or helps in stabilising the model). We need to prevent overfitting because the increase in the number of hidden layer units leads to the rise in the number of features which might get us to an overfitting problem. This includes a penalty unit added to the loss function, so at any time, only a specific set of hidden layer units are used instead of the whole.
 
-<p align="center"><img src="./images/8_auto_encoders.png" width="700" height="400"/></p>
+<p align="center"><img src="./images/8_auto_encoders.png" width="500" height="400"/></p>
 
 So, only the 1st and 5th hidden units are used.
 
 In another pass,
 
-<p align="center"><img src="./images/9_auto_encoders.png" width="700" height="400"/></p>
+<p align="center"><img src="./images/9_auto_encoders.png" width="500" height="400"/></p>
 
 the above nodes participate.
 

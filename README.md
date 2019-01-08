@@ -2,6 +2,6 @@
 
 An autoencoder is an Unsupervised Learning technique that applies backpropagation setting the target values to be equal to the input values.
 
-<img src="images/1_auto_encoder.png" width="50" height="50"/>
+<p align="center"><img src="./images/1_auto_encoders.png" width="300" height="300"/></p>
 
 

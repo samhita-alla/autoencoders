@@ -55,7 +55,7 @@ So, what have we inferred from the above example? The autoencoder is getting tra
 
 We do have different types of autoencoders available. Let's discuss about these in the following sections.
 
-#### Sparse autoencoders
+### Sparse autoencoders
 
 *Why?*<br>
 When the size of the hidden layer remains constant throughout, it might lead to learning an approxiamtion of PCA. 
@@ -75,6 +75,14 @@ the above nodes participate.
 Now the autoencoder cannot cheat by just passing in the inputs without any combinations in case of more number of hidden layer units.
 
 Find the code for the above in **sparse_autoencoders.ipynb** in *codes* repo.
+
+### Deep autoencoders
+
+It's composed of two, symmetrical **Deep Belief Networks** that have four or five shallow layers representing the encoding half of the net, and second set of four or five layers that make up the decoding half.
+
+The layers are **Restricted Boltzmann machines**, the building blocks of deep-belief networks.
+
+<p align="center"><img src="./images/12_auto_encoders.png" width="500" height="400"/></p>
 
 
 

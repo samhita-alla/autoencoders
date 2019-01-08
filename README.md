@@ -25,7 +25,35 @@ It's also used for *image classification* purposes, say a set of images belongin
 
 An interesting point to take note of is, it has this adversarial nature embedded in it, similar to the way **Generative Adversarial Networks** function. The trade-off in here, exists between the reconstruction loss and the regularizer. Reconstruction loss should be low between the input image and the reconstructed image, but the regularizer discourages over-memorization or overfitting. 
 
-Let's now build the simplest autoencoder. Checkout the simple_autoencoder.py in *codes* repo.
+Let's now build the simplest autoencoder. Checkout the **simple_autoencoder.ipynb** in **codes** repo.
+
+Time to dive deep!💨 Let's get a clear view of autoencoders with an example.
+
+<p align="center"><img src="./images/2_auto_encoders.png" width="300" height="300"/></p>
+
+In here, we've considered an example wherein the input nodes are used to depict the movies. So, now let's see how we could prove the objective part.
+
+* We need to differentiate between the negative and positive synapses firstly.
+
+<p align="center"><img src="./images/3_auto_encoders.png" width="300" height="300"/></p>
+
+* Say, we liked Movie 1 and disliked all the other three movies, then the input would be like, 1, 0, 0, 0. From this using the synapses or weights, we compute the hidden layer nodes values and then similarly extend this to the output nodes. For the first hidden node, the value can be calculated using, 1 + 0 - 0 - 0 = 1. Similarly, for the second hidden node.
+
+The first output node = 1 + 1 = 2.
+
+After computing all the other remaining values, we apply softmax function to the output layer to get the same values as the values of the input nodes.
+
+<p align="center"><img src="./images/4_auto_encoders.png" width="300" height="300"/></p>
+
+* If the second input is 1,
+
+<p align="center"><img src="./images/5_auto_encoders.png" width="300" height="300"/></p>
+
+the output is the same as the input.
+
+* At times, we often come across representations involving biases in an Auto Encoder Neural Net.
+
+<p align="center"><img src="./images/6_auto_encoders.png" width="300" height="300"/></p>
 
 
 

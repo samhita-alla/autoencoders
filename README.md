@@ -2,7 +2,7 @@
 
 An autoencoder is an Unsupervised Learning technique that applies backpropagation, setting the target values to be equal to the input values. We'll design a neural network architecture such that we impose a bottleneck in the network which forces a compressed knowledge representation of the original input.
 
-<p align="center"><img src="./images/1_auto_encoders.png" width="400" height="300"/></p>
+<p align="center"><img src="./images/1_auto_encoders.png" width="400" height="400"/></p>
 
 > Data denoising and and Dimensionality reduction are the two major applications of Autoencoders.
 
@@ -29,30 +29,28 @@ Let's now build the simplest autoencoder. Checkout the **simple_autoencoder.ipyn
 
 Time to dive deep!💨 Let's get a clear view of autoencoders with an example.
 
-<p align="center"><img src="./images/2_auto_encoders.png" width="400" height="300"/></p>
+<p align="center"><img src="./images/2_auto_encoders.png" width="600" height="400"/></p>
 
 In here, we've considered an example wherein the input nodes are used to depict the movies. So, now let's see how we could prove the objective part.
 
 * We need to differentiate between the negative and positive synapses firstly.
 
-<p align="center"><img src="./images/3_auto_encoders.png" width="400" height="300"/></p>
+<p align="center"><img src="./images/3_auto_encoders.png" width="600" height="400"/></p>
 
 * Say, we liked Movie 1 and disliked all the other three movies, then the input would be like, 1, 0, 0, 0. From this using the synapses or weights, we compute the hidden layer nodes values and then similarly extend this to the output nodes. For the first hidden node, the value can be calculated using, 1 + 0 - 0 - 0 = 1. Similarly, for the second hidden node. The first output node = 1 + 1 = 2. 
 
 * After computing all the other remaining values, we apply softmax function to the output layer to get the same values as the values of the input nodes.
 
-<p align="center"><img src="./images/4_auto_encoders.png" width="400" height="300"/></p>
+<p align="center"><img src="./images/4_auto_encoders.png" width="600" height="400"/></p>
 
-* If the second input is 1,
+* If the second input is 1,the output is the same as the input.
 
-<p align="center"><img src="./images/5_auto_encoders.png" width="400" height="300"/></p>
+<p align="center"><img src="./images/5_auto_encoders.png" width="600" height="400"/></p>
 
-the output is the same as the input.
+* At times, we often come across representations involving biases in an AutoEncoder Neural Net.
 
-* At times, we often come across representations involving biases in an Auto Encoder Neural Net.
+<p align="center"><img src="./images/6_auto_encoders.png" width="600" height="400"/></p>
 
-<p align="center"><img src="./images/6_auto_encoders.png" width="400" height="300"/></p>
-
-
+So, what have we inferred from the above example? The autoencoder is getting trained as per the rules, and henceforth, we've, in this case, assumed the weights previously, to know how it thereafter works.
 
 

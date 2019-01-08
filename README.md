@@ -11,7 +11,7 @@ It's capable of implementing some amazing things, ranging from image colorizatio
 Encode - Compress the inputs to a few bits, also called the *latent-space representation*. 
 Decode - Reconstruct the image from the above generated latent-space representation. 
 
-<p align="center"><img src="./images/auto-arch.png" width="300" height="300"/></p>
+<p align="center"><img src="./images/auto-arch.png" width="600" height="300"/></p>
 
 So, why are we doing this, again constructing the input back at the output (there's no output though)?
 The reason is, if at all the input is constructed reliably at the output side, it indicates that the hidden layers have enough information to represent the output. Hence, in an autoencoder, we care about the hidden layer(s). A hidden layer is smaller than the input and output layer, in terms of the number of nodes, and henceforth, stores dense information. If at all it's the same as the input layer, then the network just blindly memorizes the data by passing the values to the output layer. Therefore, we need to make sure to let the *hidden layer be the bottleneck*. 

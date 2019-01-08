@@ -29,28 +29,54 @@ Let's now build the simplest autoencoder. Checkout the **simple_autoencoder.ipyn
 
 Time to dive deep!💨 Let's get a clear view of autoencoders with an example.
 
-<p align="center"><img src="./images/2_auto_encoders.png" width="600" height="400"/></p>
+<p align="center"><img src="./images/2_auto_encoders.png" width="700" height="400"/></p>
 
 In here, we've considered an example wherein the input nodes are used to depict the movies. So, now let's see how we could prove the objective part.
 
 * We need to differentiate between the negative and positive synapses firstly.
 
-<p align="center"><img src="./images/3_auto_encoders.png" width="600" height="400"/></p>
+<p align="center"><img src="./images/3_auto_encoders.png" width="700" height="400"/></p>
 
 * Say, we liked Movie 1 and disliked all the other three movies, then the input would be like, 1, 0, 0, 0. From this using the synapses or weights, we compute the hidden layer nodes values and then similarly extend this to the output nodes. For the first hidden node, the value can be calculated using, 1 + 0 - 0 - 0 = 1. Similarly, for the second hidden node. The first output node = 1 + 1 = 2. 
 
 * After computing all the other remaining values, we apply softmax function to the output layer to get the same values as the values of the input nodes.
 
-<p align="center"><img src="./images/4_auto_encoders.png" width="600" height="400"/></p>
+<p align="center"><img src="./images/4_auto_encoders.png" width="700" height="400"/></p>
 
 * If the second input is 1,the output is the same as the input.
 
-<p align="center"><img src="./images/5_auto_encoders.png" width="600" height="400"/></p>
+<p align="center"><img src="./images/5_auto_encoders.png" width="700" height="400"/></p>
 
 * At times, we often come across representations involving biases in an AutoEncoder Neural Net.
 
-<p align="center"><img src="./images/6_auto_encoders.png" width="600" height="400"/></p>
+<p align="center"><img src="./images/6_auto_encoders.png" width="700" height="400"/></p>
 
 So, what have we inferred from the above example? The autoencoder is getting trained as per the rules, and henceforth, we've, in this case, assumed the weights previously, to know how it thereafter works.
+
+We do have different types of autoencoders available. Let's discuss about these in the following sections.
+
+#### Sparse autoencoders
+
+*Why?*<br>
+When the size of the hidden layer remains constant throughout, it might lead to learning an approxiamtion of PCA. 
+
+It is an autoencoder which has more number of hidden layer units than the input layer but additionally, implements Regularization technique(prevents overfitting or helps in stabilising the model). We need to prevent overfitting because the increase in the number of hidden layer units leads to the rise in the number of features which might get us to an overfitting problem. This includes a penalty unit added to the loss function, so at any time, only a specific set of hidden layer units are used instead of the whole.
+
+<p align="center"><img src="./images/8_auto_encoders.png" width="700" height="400"/></p>
+
+So, only the 1st and 5th hidden units are used.
+
+In another pass,
+
+<p align="center"><img src="./images/9_auto_encoders.png" width="700" height="400"/></p>
+
+the above nodes participate.
+
+Now the autoencoder cannot cheat by just passing in the inputs without any combinations in case of more number of hidden layer units.
+
+Find the code for the above in **sparse_autoencoders.ipynb** in *codes* repo.
+
+
+
 
 

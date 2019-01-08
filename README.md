@@ -25,7 +25,7 @@ It's also used for *image classification* purposes, say a set of images belongin
 
 An interesting point to take note of is, it has this adversarial nature embedded in it, similar to the way **Generative Adversarial Networks** function. The trade-off in here, exists between the reconstruction loss and the regularizer. Reconstruction loss should be low between the input image and the reconstructed image, but the regularizer discourages over-memorization or overfitting. 
 
-
+Let's now build the simplest autoencoder. Checkout the simple_autoencoder.py in *codes* repo.
 
 
 

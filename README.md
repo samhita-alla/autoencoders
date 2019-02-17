@@ -55,7 +55,7 @@ So, what have we inferred from the above example? The autoencoder is getting tra
 
 We do have different types of autoencoders available. Let's discuss about these in the following sections.
 
-### Sparse autoencoders
+### Sparse autoencoder
 
 *Why?*<br>
 When the size of the hidden layer remains constant throughout, it might lead to learning an approxiamtion of PCA. 
@@ -76,7 +76,7 @@ Now the autoencoder cannot cheat by just passing in the inputs without any combi
 
 Find the code for the above in **sparse_autoencoder.ipynb** in *codes* repo.
 
-### Deep autoencoders
+### Deep autoencoder
 
 It's composed of two, symmetrical **Deep Belief Networks** that have four or five shallow layers representing the encoding half of the net, and second set of four or five layers that make up the decoding half.
 
@@ -90,7 +90,7 @@ The additional hidden layers present in the deep autoencoders help in interpreti
 
 Find the code for the above in **deep_autoencoder.ipynb** in *codes* repo.
 
-### Convolutional autoencoders
+### Convolutional autoencoder
 
 Since, in here, we're dealing with images(MNIST), convolutional neural networks make more sense to deal with, hence, we use CNNs as encoders and decoders. 
 
@@ -111,3 +111,5 @@ It's a type of autoencoder with added constraints on the encoded representations
 First, an encoder network turns the input samples x into two parameters in a latent space, which we will note **z_mean** and **z_log_sigma**. Then, we randomly sample similar points z from the latent normal distribution that is assumed to generate the data, via **z = z_mean + exp(z_log_sigma) * epsilon**, where epsilon is a random normal tensor. Finally, a decoder network maps these latent space points back to the original input data.
 
 The parameters of the model are trained via two loss functions: a **reconstruction loss** forcing the decoded samples to match the initial inputs (just like in our previous autoencoders), and the **KL divergence** between the learned latent distribution and the prior distribution, acting as a regularization term. You could actually get rid of this latter term entirely, although it does help in learning well-formed latent spaces and reducing overfitting to the training data.
+
+Find the code for the above in **vae_autoencoder.ipynb** in *codes* repo.

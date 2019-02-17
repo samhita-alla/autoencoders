@@ -74,7 +74,7 @@ the above nodes participate.
 
 Now the autoencoder cannot cheat by just passing in the inputs without any combinations in case of more number of hidden layer units.
 
-Find the code for the above in **sparse_autoencoders.ipynb** in *codes* repo.
+Find the code for the above in **sparse_autoencoder.ipynb** in *codes* repo.
 
 ### Deep autoencoders
 
@@ -84,7 +84,30 @@ The layers are **Restricted Boltzmann machines**, the building blocks of deep-be
 
 <p align="center"><img src="./images/12_auto_encoders.png" width="400" height="400"/></p>
 
+The additional hidden layers present in the deep autoencoders help in interpreting more complex pattern underlying the data. 
 
+**Use cases:** Image search(since the images are compressed, the given image to be searched is also converted into a vector and compared with the given set of vectors), Data compression, Topic modelling and Information retrieval.
 
+Find the code for the above in **deep_autoencoder.ipynb** in *codes* repo.
 
+### Convolutional autoencoders
 
+Since, in here, we're dealing with images(MNIST), convolutional neural networks make more sense to deal with, hence, we use CNNs as encoders and decoders. 
+
+**Use case:** Image denoising.
+
+Find the code for the above in **convolutional_autoencoder.ipynb** in *codes* repo.
+
+### Sequence-to-Sequence autoencoder
+
+If the input is of type sequence, then we can use LSTMs to capture the temporal structures. To build a LSTM-based autoencoder, first use a LSTM encoder to turn your input sequences into a single vector that contains information about the entire sequence, then repeat this vector n times (where n is the number of timesteps in the output sequence), and run a LSTM decoder to turn this constant sequence into the target sequence.
+
+### Variational autoencoder
+
+It's a type of autoencoder with added constraints on the encoded representations being learned. More precisely, it is an autoencoder that learns a latent variable model for its input data. So instead of letting your neural network learn an arbitrary function, you are learning the parameters of a probability distribution modeling your data. If you sample points from this distribution, you can generate new input data samples: a VAE is a **generative model**.
+
+*How does a variational autoencoder work?*
+
+First, an encoder network turns the input samples x into two parameters in a latent space, which we will note **z_mean** and **z_log_sigma**. Then, we randomly sample similar points z from the latent normal distribution that is assumed to generate the data, via **z = z_mean + exp(z_log_sigma) * epsilon**, where epsilon is a random normal tensor. Finally, a decoder network maps these latent space points back to the original input data.
+
+The parameters of the model are trained via two loss functions: a **reconstruction loss** forcing the decoded samples to match the initial inputs (just like in our previous autoencoders), and the **KL divergence** between the learned latent distribution and the prior distribution, acting as a regularization term. You could actually get rid of this latter term entirely, although it does help in learning well-formed latent spaces and reducing overfitting to the training data.
